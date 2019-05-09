@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     this.myForm = this.fb.group({
       sabor: ['', Validators.required],
-      tipo: ['', Validators.required],
+      tipo: ['0', Validators.required],
       kilos: ['', Validators.required]
     });
   }

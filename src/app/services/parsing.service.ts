@@ -10,7 +10,7 @@ export class ParsingService {
 
   Parse(itemArray: Array<Helado>) {
     const returnArray = new Array<Helado>();
-    itemArray.forEach((helado) =>{
+    itemArray.forEach((helado) => {
       returnArray.push(new Helado(helado.id, helado.sabor, helado.tipo, helado.kilos, helado.foto));
     });
 

@@ -3,9 +3,12 @@
         <div class="grid-container">
             <form [formGroup]="myForm" (ngSubmit)="createIceCream()">
                 <input type="text" formControlName="sabor" placeholder="Sabor">
-                <input type="text" formControlName="tipo" placeholder="Tipo">
-                <input type="number" formControlName="kilos" placeholder="Kilos">
-                
+                <fieldset>
+                    <legend>Tipo De Helado</legend>
+                    <input type="radio" formControlName="tipo" value="0" id="agua"><label for="agua">Agua</label>
+                    <input type="radio" formControlName="tipo" value="1" id="crema"><label for="crema">Crema</label>
+                  </fieldset>
+                <input type="number" formControlName="kilos" placeholder="Kilos">                
                 <button type="submit" class="button primary" [disabled]="!myForm.valid">Nuevo Helado</button>
             </form>
         </div>
