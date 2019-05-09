@@ -1,0 +1,55 @@
+<div class="grid-container">
+  <div class="callout">
+      <div class="input-group">
+          <span class="input-group-label"><i class="fas fa-search"></i></span>
+          <input class="input-group-field" type="text" placeholder="Sabor" #searchField>
+          <div class="input-group-button">
+            <button class="button primary" (click)="search(searchField.value)">Buscar</button>
+          </div>
+        </div>
+  </div>
+
+  <div *ngIf="encontrado" class="callout success">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x align-center-middle text-center">
+        <div class="cell small-4">
+            <div class="grid-x grid-margin-x align-center-middle text-center">
+                <h1>{{ heladoEncontrado.sabor }}</h1>
+            </div>
+            <div class="grid-x grid-margin-x align-center-middle text-center">
+                <h4> Helado de {{ heladoEncontrado.tipo }} </h4>
+            </div>
+        </div>
+        <div class="cell small-8"><h1>{{ heladoEncontrado.kilos }} Kilos</h1></div>
+      </div>
+   </div>
+</div>
+
+<div *ngIf="doesNotExist" class="callout alert">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x align-center-middle text-center">
+        <div class="cell small-4">
+            <div class="grid-x grid-margin-x align-center-middle text-center">
+                <h1><i class="far fa-dizzy" style="font-size: 200%"></i></h1>
+            </div>
+        </div>
+        <div class="cell small-8"><h1>Helado No Encontrado</h1></div>
+      </div>
+   </div>
+</div>
+
+<div *ngIf="noStock" class="callout warning">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x align-center-middle text-center">
+        <div class="cell small-4">
+            <div class="grid-x grid-margin-x align-center-middle text-center">
+                <h1>{{ heladoEncontrado.sabor }}</h1>
+            </div>
+            <div class="grid-x grid-margin-x align-center-middle text-center">
+                <h4> Helado de {{ heladoEncontrado.tipo }}</h4>
+            </div>
+        </div>
+        <div class="cell small-8"><h1>{{ heladoEncontrado.kilos }} Kilos</h1></div>
+      </div>
+   </div>
+</div>

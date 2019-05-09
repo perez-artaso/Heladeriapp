@@ -1,0 +1,13 @@
+<div class="grid-container">
+    <div class="callout">
+        <div class="grid-container">
+            <form [formGroup]="myForm" (ngSubmit)="createIceCream()">
+                <input type="text" formControlName="sabor" placeholder="Sabor">
+                <input type="text" formControlName="tipo" placeholder="Tipo">
+                <input type="number" formControlName="kilos" placeholder="Kilos">
+                
+                <button type="submit" class="button primary" [disabled]="!myForm.valid">Nuevo Helado</button>
+            </form>
+        </div>
+    </div>
+</div>

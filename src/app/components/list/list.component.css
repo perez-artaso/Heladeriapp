@@ -1,0 +1,12 @@
+.thumbnail{
+    width: 5em;
+    height: 5em;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}

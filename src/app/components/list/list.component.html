@@ -1,0 +1,38 @@
+<table>
+  <thead>
+    <tr>
+      <th>Sabor</th>
+      <th>Tipo</th>
+      <th>Kilos</th>
+      <th>Foto</th>
+      <th>Seleccionar</th>
+      <th>Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of helados">
+      <td>{{item.sabor}}</td>
+      <td>{{item.tipo}}</td>
+      <td>{{item.kilos}}</td>
+      <td><img src="https://www.haagendazs.us/sites/site.prod1.haagendazs.us/files/product/thumbnail-image/HD_WebPintCurl_BananaPBChip_553x562.jpg" class="thumbnail"></td>
+      <td><app-select-button [id]="item.id" (signal)="signalReceived($event)" data-open="exampleModal1"></app-select-button></td>
+      <td><button class="button alert" (click)="deleteIceCream(item.id)"><i class="fas fa-trash-alt"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="reveal" id="exampleModal1" data-reveal>
+  <p>El Id del Helado Seleccionado Es: </p><div class="stat">{{ selectedId }}</div>
+  <button class="close-button" data-close aria-label="Cerrar" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="reveal" id="heladoEliminadoModal" data-reveal>
+  <div class="callout alert">
+    Helado Eliminado Con Éxito
+  </div>
+  <button class="close-button" data-close aria-label="Cerrar" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
